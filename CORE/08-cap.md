@@ -22,6 +22,24 @@ and may bind:
 
 Exact encoding is implementation. The binds are conceptual law.
 
+## Conceptual lifecycle
+
+A Cap moves through conceptual states (encoding free):
+
+```text
+Minted → Active → Consumed (once) | Expired | Revoked
+```
+
+| Transition | Rule |
+|------------|------|
+| Minted → Active | Host mint under policy (or meta-Cap) |
+| Active → Consumed | Single-use consume **before** side-effects when once is required |
+| Active → Expired | Outside validity window under Host clock policy → verify refuses |
+| Active → Revoked | Host revoke → reverse lineage tied to that Cap per policy |
+
+Success paths must not skip verify or required consume.  
+Replay of a Consumed once-Cap refuses.
+
 ## mint
 
 **mint** creates a Cap.  
@@ -61,3 +79,4 @@ They do not create ambient root power outside bootstrap policy.
 
 - [22-sealed-args.md](22-sealed-args.md)
 - [14-security-model.md](14-security-model.md)
+- [26-idempotency.md](26-idempotency.md)
