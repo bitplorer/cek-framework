@@ -1,0 +1,18 @@
+flowchart TD
+  IN[Intent + Cap] --> V{verify Cap}
+  V -->|fail| AR[authority_refusal
+zero Ops]
+  V -->|ok| B[BoundAsk]
+  B --> O{once / idempotency}
+  O -->|store down or once replay| AR2[refuse]
+  O -->|duplicate idempotency| PR[replay prior Result]
+  O -->|ok| T[reload truth from Host store]
+  T --> D[dispatch]
+  D -->|miss| DE[dispatch error]
+  D -->|ok| LIN{revocable Cap or
+endable Activity?}
+  LIN -->|yes| REC[record lineage
+authorized Ops + reverse plan]
+  LIN -->|no| PROJ
+  REC --> PROJ[project to profile union Baseline]
+  PROJ --> OUT[Result]

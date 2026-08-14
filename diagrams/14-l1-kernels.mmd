@@ -1,0 +1,13 @@
+flowchart LR
+  subgraph L1["L1 kernels — closed set"]
+    H[Host
+Decide]
+    P[Peer
+Carry out]
+  end
+  C[Caller L7] -->|Intent + Cap| H
+  H -->|Result + Ops| P
+  H -->|lineage / reverse| H
+  note1[Not kernels:
+bootstrap · lineage store · recovery Cap
+profile · transport · conformance]

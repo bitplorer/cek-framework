@@ -1,0 +1,15 @@
+flowchart TD
+  CAP[Cap + Intent] --> HOST[Host Result
+authorized Ops]
+  HOST --> PEER[Peer apply]
+  PEER --> RCPT{receipt?}
+  RCPT -->|yes| LAND[landed set]
+  RCPT -->|no| AUTH[authorized set]
+  LAND --> REV[reverse]
+  AUTH --> REV
+  REV --> PLAN{plan}
+  PLAN -->|inverse| INV[inverse Ops]
+  PLAN -->|compensation| COMP[recovery Cap Intents]
+  PLAN -->|impossible| MARK[non-reversible mark]
+  INV -->|fail| MARK
+  COMP -->|fail| MARK

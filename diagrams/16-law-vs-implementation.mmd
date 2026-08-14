@@ -1,0 +1,15 @@
+flowchart TB
+  subgraph Law["cek-framework — law"]
+    META[META method]
+    CORE[CORE concepts
+Host Peer Cap Ops lineage]
+    CONF[conformance families]
+  end
+  subgraph Impl["cek-runtime — implementation"]
+    SCH[schemas + vectors]
+    HR[Host kernel Rust]
+    PR[Peer kernel Rust]
+    CI[CI merge gates]
+  end
+  Law -->|implements without amending| Impl
+  Impl -->|must pass| CONF

@@ -1,0 +1,10 @@
+stateDiagram-v2
+  [*] --> Minted: Host mint
+  Minted --> Active: issued under policy
+  Active --> Consumed: once consume before effects
+  Active --> Expired: outside validity (Host clock)
+  Active --> Revoked: Host revoke
+  Consumed --> [*]: replay refuses
+  Expired --> [*]: verify refuses
+  Revoked --> Reverse: reverse lineage under policy
+  Reverse --> [*]
