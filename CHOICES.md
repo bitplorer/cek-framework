@@ -30,12 +30,23 @@ This file records **why** key choices were made while deriving CEK, so nothing i
 | part | plugin | Avoid ambient-load implication |
 | mint / submit / apply | run for all | One verb per intention |
 
+## Framework name
+
+| Choice | Rejected | Why |
+|--------|----------|-----|
+| **CEK** (Cap-Effect Meta-Language) | Naming the *language* **Ops** | Ops is one kernel noun (carry-out list), not the whole law |
+| **CEK** | Stylized aliases (e.g. Ceksy, `c+ek`) | Synonym fork (A10/K10); punctuation/meme names fail decades stability and intention clarity |
+| Cap-Effect pair | Effect-only or Cap-only brand | Law is allow **and** carry out under one contract |
+
+Tutorial gloss once is allowed. Second official language name is not.
+
 ## Role split
 
 | Choice | Alternative | Why |
 |--------|-------------|-----|
 | Host vs Peer | Client/Server names | Topology-independent |
 | Peer never mints root Caps | Trusted peer mint | Preserves Cap-only truth |
+| Exactly two L1 kernels | Third kernel (broker, notary, lineage service as role) | Decide/carry-out split is complete; extras are duties or L4–L7 |
 
 ## Accountability
 
@@ -63,3 +74,10 @@ This file records **why** key choices were made while deriving CEK, so nothing i
 |--------|-------------|-----|
 | Frozen primary vocabulary | Rename freely | Developers bet on names |
 | Conformance as correctness | Docs alone | Executable expectation |
+
+## Implementation boundary
+
+| Choice | Alternative | Why |
+|--------|-------------|-----|
+| Law stays encoding- and language-free | Freeze Rust/Python/crate layout in CORE | Implementation multiplicity is allowed; law must not prefer a stack |
+| Host pipeline as ordered conceptual stages | Unordered duty list only | Prevents verify-after-effects and once-after-mutate |
