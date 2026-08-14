@@ -7,11 +7,55 @@ To implement Host and Peer kernels, use **[cek-runtime](https://github.com/bitpl
 
 | Start here | Link |
 |------------|------|
+| **This repo at a glance** | ↓ below |
 | 10-minute core | [CORE/QUICKSTART.md](CORE/QUICKSTART.md) |
-| **All concepts (glance)** | [CONCEPTS.md](CONCEPTS.md) |
+| All concepts | [CONCEPTS.md](CONCEPTS.md) |
 | Still CEK? | [KILL-CRITERIA.md](KILL-CRITERIA.md) |
-| Full index | [INDEX.md](INDEX.md) |
 | Build kernels | [cek-runtime](https://github.com/bitplorer/cek-runtime) |
+
+---
+
+## This repo at a glance
+
+```text
+┌────────────────────────── cek-framework ──────────────────────────┐
+│  LAW (not code)                                                   │
+│                                                                   │
+│  Cap  = permission ticket                                         │
+│  Intent = the ask under a Cap                                     │
+│  Host = decides (verify Cap, lineage, Result{Ops})                │
+│  Peer = only applies Ops                                          │
+│  Ops  = ordered effects as data                                   │
+│  lineage + reverse = how cancel/revoke is honest                  │
+│  Baseline = classic Ops that never silent-break                   │
+│  trace = groups steps (never permission)                          │
+│                                                                   │
+│  Flow:  mint → submit → verify → Ops → apply → end → reverse      │
+└───────────────────────────────────────────────────────────────────┘
+         │                                      │
+         │ meanings & kill criteria             │ build Host/Peer
+         ▼                                      ▼
+   this repo                              cek-runtime
+```
+
+| This repo **is** | This repo **is not** |
+|------------------|----------------------|
+| Frozen vocabulary and axioms | An npm/cargo library |
+| What “correct CEK” means | Runnable Host/Peer |
+| Design review checklist | Wire codecs or UI widgets |
+
+| Term | One line |
+|------|----------|
+| **Cap** | Ticket for one class of ask |
+| **Intent** | The ask |
+| **Host** | Authority — decide |
+| **Peer** | Apply surface only |
+| **Ops** | Effect list (data) |
+| **Activity** | Bounded job; end triggers reverse |
+| **lineage** | Cause trail for undo |
+| **Baseline** | Permanent interop Ops |
+
+Full boxes and “is / is not” for every concept: **[CONCEPTS.md](CONCEPTS.md)**.
 
 ---
 
@@ -46,24 +90,11 @@ When the Activity ends (or Cap is revoked), Host reverses lineage.
 Peer may apply inverse/restore Ops; completing a morph does not auto-undo.
 ```
 
-Every term above is expanded with boxes and “is / is not” in **[CONCEPTS.md](CONCEPTS.md)**.
-
-| Term | Meaning |
-|------|---------|
-| **Cap** | Ticket for one class of ask |
-| **Intent** | The ask |
-| **Host** | Authority — decide |
-| **Ops** | Ordered effects as data |
-| **Peer** | Apply surface (UI, agent, device) |
-| **Activity** | Bounded job with a lifetime |
-| **lineage** | Cause trail for undo/revoke |
-| **Baseline** | Classic Ops that stay understandable |
-
 ---
 
 ## How to use this repo
 
-1. Read [CORE/QUICKSTART.md](CORE/QUICKSTART.md) or skim [CONCEPTS.md](CONCEPTS.md).  
+1. Skim the glance above or [CONCEPTS.md](CONCEPTS.md); or read [CORE/QUICKSTART.md](CORE/QUICKSTART.md).  
 2. Check designs against [KILL-CRITERIA.md](KILL-CRITERIA.md).  
 3. Keep one vocabulary — no second official names for Cap, Ops, Host, Peer.  
 4. Implement via [cek-runtime](https://github.com/bitplorer/cek-runtime) (or a port that honors the same conformance idea).
@@ -94,7 +125,7 @@ Official name: **CEK** (Cap-Effect Meta-Language).
 
 ## Reading order
 
-1. [QUICKSTART](CORE/QUICKSTART.md) or [CONCEPTS](CONCEPTS.md) + [KILL-CRITERIA](KILL-CRITERIA.md)  
+1. Glance (this README) → [CONCEPTS](CONCEPTS.md) or [QUICKSTART](CORE/QUICKSTART.md) + [KILL-CRITERIA](KILL-CRITERIA.md)  
 2. [CORE/SUMMARY.md](CORE/SUMMARY.md)  
 3. Detail as needed · [CHARTER.md](CHARTER.md)
 
