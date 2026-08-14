@@ -1,0 +1,5 @@
+flowchart TD
+  B[Host bootstrap policy private] --> M[mint initial Caps]
+  M --> R[system runs Intent under Cap only]
+  R --> P[Peer applies Ops]
+  B -.->|never| Peer((Peer))

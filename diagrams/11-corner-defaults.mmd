@@ -1,0 +1,14 @@
+flowchart TD
+  Q[Uncertain situation] --> A{Authority clear?}
+  A -->|no| R[Refuse fail closed]
+  A -->|yes| B{Known Op / meta?}
+  B -->|unknown meta| I[Ignore]
+  B -->|unknown Op| P[Profile policy]
+  B -->|known| C{Peer can apply?}
+  C -->|no| L[Lower to Baseline Ops]
+  C -->|yes| Apply[Peer apply]
+  Apply --> D{Activity end or revoke?}
+  D -->|yes| Rev[Reverse lineage]
+  Rev --> E{Reverse complete?}
+  E -->|no| M[Mark non-reversible]
+  E -->|yes| OK[Done]

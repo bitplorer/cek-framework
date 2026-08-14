@@ -1,0 +1,10 @@
+stateDiagram-v2
+  [*] --> Opening
+  Opening --> Active: Cap-gated open
+  Active --> Active: submit Intents / load parts
+  Active --> Ending: complete cancel unload
+  Ending --> Reversing: reverse lineage
+  Reversing --> Closed
+  Closed --> [*]
+  Opening --> Failed: inject or policy fail
+  Failed --> [*]

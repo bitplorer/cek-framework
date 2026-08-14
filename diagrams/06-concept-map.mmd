@@ -1,0 +1,16 @@
+flowchart TB
+  Cap -->|allows| Intent
+  Intent -->|submit to| Host
+  Host -->|Result Ops| Peer
+  Peer -->|apply| Ops
+  Activity -->|has| Context
+  Activity -->|inject limit isolate| Context
+  Activity -->|submits under| Cap
+  Cap -->|lineage| lineage
+  Activity -->|lineage| lineage
+  lineage -->|reverse| reverse
+  Intent -.->|grouped by| trace
+  part -->|loads under Cap into| Activity
+  profile -->|limits apply ability of| Peer
+  Baseline -->|constrains| Host
+  Baseline -->|constrains| Peer

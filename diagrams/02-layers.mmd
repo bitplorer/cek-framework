@@ -1,0 +1,17 @@
+flowchart TB
+  L7[L7 Application]
+  L6[L6 Policy optional]
+  L5[L5 Drivers domain Ops]
+  L4[L4 Negotiate profile]
+  L3[L3 Correlate trace]
+  L2[L2 Bound Activity Context lineage reverse]
+  L1[L1 Kernels Host Peer]
+  L0[L0 Law axioms Baseline]
+
+  L7 --> L6
+  L6 --> L5
+  L5 --> L4
+  L4 --> L3
+  L3 --> L2
+  L2 --> L1
+  L1 --> L0

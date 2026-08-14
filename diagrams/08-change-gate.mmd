@@ -1,0 +1,12 @@
+flowchart TD
+  P[Proposal] --> S[Canonical speech]
+  S --> L[Assign layer]
+  L --> A{Axioms OK?}
+  A -->|no| R[Reject or amend charter]
+  A -->|yes| N{Naming OK?}
+  N -->|no| R
+  N -->|yes| B{Baseline OK?}
+  B -->|no| V[Major version + dual-speak]
+  B -->|yes| C[Conformance update]
+  V --> C
+  C --> Acc[Accept]

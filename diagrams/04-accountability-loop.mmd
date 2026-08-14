@@ -1,0 +1,7 @@
+flowchart LR
+  A[Allow Cap] --> B[Ask Intent]
+  B --> C[Carry out Ops]
+  C --> D[Record lineage]
+  D --> E[Bound Activity ends]
+  E --> F[Reverse lineage]
+  T[trace] -.->|groups asks only| B

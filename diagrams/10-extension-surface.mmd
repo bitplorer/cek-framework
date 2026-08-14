@@ -1,0 +1,14 @@
+flowchart TB
+  subgraph Frozen["L0–L2 frozen law"]
+    Law[axioms Baseline]
+    Ker[Host Peer]
+    Bound[Activity lineage Cap]
+  end
+  subgraph Flexible["Extend here"]
+    L3[trace]
+    L4[profile]
+    L5[domain Ops]
+    L6[policy]
+    L7[app]
+  end
+  Flexible --> Frozen

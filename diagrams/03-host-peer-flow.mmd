@@ -1,0 +1,17 @@
+sequenceDiagram
+  participant Caller
+  participant Host
+  participant Peer
+
+  Host->>Host: mint Cap
+  Caller->>Host: submit Intent under Cap
+  Host->>Host: verify Cap
+  alt verify fails or once-store down
+    Host-->>Caller: Result error fail closed
+  else verify ok
+    Host->>Host: dispatch action
+    Host->>Host: record lineage if required
+    Host-->>Caller: Result with Ops
+    Caller->>Peer: deliver Ops
+    Peer->>Peer: apply Ops under profile
+  end
