@@ -1,7 +1,60 @@
 # Cap-Effect Meta-Language (CEK)
 
-Locked conceptual charter.  
-**Start:** [CORE/QUICKSTART.md](CORE/QUICKSTART.md) · **Index:** [INDEX.md](INDEX.md) · **Not CEK:** [KILL-CRITERIA.md](KILL-CRITERIA.md)
+Locked conceptual charter — the **law** of authorized change across boundaries.
+
+**Start:** [CORE/QUICKSTART.md](CORE/QUICKSTART.md) · **Index:** [INDEX.md](INDEX.md) · **Not CEK:** [KILL-CRITERIA.md](KILL-CRITERIA.md)  
+**To implement:** [cek-runtime](https://github.com/bitplorer/cek-runtime)
+
+---
+
+## For developers — what is this?
+
+**CEK is not a library you install and not a language you write apps in.**  
+It is a small rulebook for systems where *permission*, *effects*, and *undo* must stay honest.
+
+| Idea | In practice |
+|------|-------------|
+| **Cap** | Ticket that allows one class of ask |
+| **Intent** | The ask |
+| **Host** | Checks the ticket, decides, records causes |
+| **Ops** | Ordered list of effects (data, not code) |
+| **Peer** | Applies that list — does not invent permission |
+| **lineage / reverse** | What happened under a Cap/Activity, and how to undo |
+| **Baseline** | Classic Ops everyone still understands years later |
+
+**Flow (always the same):**
+
+```text
+Host mints Cap → you submit Intent under Cap
+→ Host verifies (or refuses with no side effects)
+→ Host returns Result with Ops
+→ Peer applies Ops
+→ when work ends, reverse lineage (or mark non-reversible)
+```
+
+### When is CEK useful?
+
+Use this charter when you are building (or reviewing) something that:
+
+- changes a **shared world** (data, devices, multi-agent tools, multiplayer state)  
+- must not rely on ambient “admin” or session magic as permission  
+- needs **revoke / unload / end** with a defined undo story  
+- must **interop** across versions without silent breaks (Baseline)  
+- splits **decide** (server, authority service) from **carry out** (UI, agent, device)
+
+### When you do *not* need this repo alone
+
+- You want runnable Host/Peer code, CI vectors, crate layout → use **[cek-runtime](https://github.com/bitplorer/cek-runtime)**  
+- You only need a normal app with local state and no cross-boundary authority story  
+
+### How developers use *this* repo
+
+1. Read [CORE/QUICKSTART.md](CORE/QUICKSTART.md) (10 minutes).  
+2. Check designs against [KILL-CRITERIA.md](KILL-CRITERIA.md).  
+3. Use frozen words only: Cap, Intent, Ops, Host, Peer, Activity, lineage, Baseline.  
+4. Implement against the law via [cek-runtime](https://github.com/bitplorer/cek-runtime) (or your own port that passes conformance).
+
+---
 
 | | |
 |--|--|
@@ -26,7 +79,7 @@ Rejected as official language names: Ops, stylized aliases (e.g. Ceksy, `c+ek`).
 |------|------|
 | [META/](META/) | How the core is derived and amended |
 | [CORE/](CORE/) | Language law (00–27) |
-| [diagrams/](diagrams/) | Mermaid flows |
+| [diagrams/](diagrams/) | Mermaid flows (+ plain tables in READMEs) |
 | [PROPOSALS/](PROPOSALS/) | Optional extensions (**not frozen**) |
 | [STABILITY.md](STABILITY.md) [GLOSSARY.md](GLOSSARY.md) [STYLE.md](STYLE.md) [CHOICES.md](CHOICES.md) [COMPLETENESS.md](COMPLETENESS.md) [CHARTER.md](CHARTER.md) | Guarantees, terms, style, rationale, audit, freeze |
 
@@ -52,4 +105,4 @@ Everyone supports the Baseline; profile only negotiates apply ability.
 
 ## Non-goals
 
-Implementation code · wire paths as law · product UI catalogs · marketing renames of kernel terms · implementation languages / crate layout / CI (see separate implementation framework)
+Implementation code · wire paths as law · product UI catalogs · marketing renames of kernel terms · implementation languages / crate layout / CI (see [cek-runtime](https://github.com/bitplorer/cek-runtime))
