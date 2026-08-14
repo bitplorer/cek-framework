@@ -68,7 +68,9 @@
 
 ## Diagrams
 
-[diagrams/README.md](diagrams/README.md)
+[diagrams/README.md](diagrams/README.md) — meta, layers, Host/Peer, Cap lifecycle, ordered Host pipeline, authorized/landed reverse, law vs implementation.
+
+Implementation flow diagrams: [cek-runtime/diagrams](https://github.com/bitplorer/cek-runtime/tree/main/diagrams).
 
 ## Proposals (not frozen)
 
