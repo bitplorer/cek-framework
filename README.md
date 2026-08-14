@@ -8,6 +8,12 @@ Locked conceptual charter.
 | **Meta** | Fuse explicit parents → partition by intention → lock axioms → name by job → layer strictly → split decide/carry out → require allow/bound/record/reverse → protect Baseline → reject drift → test by canonical speech |
 | **Core** | Mint Cap → submit Intent → apply Ops → bound in Activity → record lineage → reverse on end → group with trace → keep Baseline |
 
+## Framework name
+
+Official name: **CEK** (Cap-Effect Meta-Language).  
+**Ops** is a kernel noun (ordered carry-out list), not the language name.  
+Rejected as official language names: Ops, stylized aliases (e.g. Ceksy, `c+ek`).
+
 ## Goals
 
 | Secure | Flexible | Stable |
@@ -46,4 +52,4 @@ Everyone supports the Baseline; profile only negotiates apply ability.
 
 ## Non-goals
 
-Implementation code · wire paths as law · product UI catalogs · marketing renames of kernel terms
+Implementation code · wire paths as law · product UI catalogs · marketing renames of kernel terms · implementation languages / crate layout / CI (see separate implementation framework)
