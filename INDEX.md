@@ -4,16 +4,17 @@
 
 | Doc | Role |
 |-----|------|
-| [README.md](README.md) | Overview and reading order |
-| [CORE/QUICKSTART.md](CORE/QUICKSTART.md) | Irreducible core (start here) |
+| [README.md](README.md) | What CEK is, problems it solves, how to use this repo |
+| [CORE/QUICKSTART.md](CORE/QUICKSTART.md) | Irreducible core |
 | [KILL-CRITERIA.md](KILL-CRITERIA.md) | When it is not CEK |
 | [COMPLETENESS.md](COMPLETENESS.md) | Coverage audit |
 | [GLOSSARY.md](GLOSSARY.md) | Frozen terms |
-| [STABILITY.md](STABILITY.md) | Language stability guarantees |
-| [CHARTER.md](CHARTER.md) | What is frozen; how to amend |
+| [STABILITY.md](STABILITY.md) | Stability guarantees |
+| [CHARTER.md](CHARTER.md) | Freeze and amendment |
 | [CHOICES.md](CHOICES.md) | Why key choices were made |
-| [STYLE.md](STYLE.md) | Clarity and consistency rules |
+| [STYLE.md](STYLE.md) | Documentation style |
 | [CONTRIBUTING.md](CONTRIBUTING.md) | How to change the charter |
+| [cek-runtime](https://github.com/bitplorer/cek-runtime) | Implementation framework |
 
 ## Meta-framework (`META/`)
 
@@ -68,9 +69,9 @@
 
 ## Diagrams
 
-[diagrams/README.md](diagrams/README.md) — meta, layers, Host/Peer, Cap lifecycle, ordered Host pipeline, authorized/landed reverse, law vs implementation.
+[diagrams/README.md](diagrams/README.md) — Cap lifecycle, Host pipeline, L1 kernels, reverse sets, law vs implementation.
 
-Implementation flow diagrams: [cek-runtime/diagrams](https://github.com/bitplorer/cek-runtime/tree/main/diagrams).
+Implementation diagrams: [cek-runtime/diagrams](https://github.com/bitplorer/cek-runtime/tree/main/diagrams).
 
 ## Proposals (not frozen)
 
