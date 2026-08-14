@@ -17,25 +17,29 @@
 
 ## This repo at a glance
 
+**What this is:** frozen **law** (meanings and rules), not runnable code.
+
+| Idea | Meaning |
+|------|---------|
+| **Cap** | Permission ticket |
+| **Intent** | The ask under a Cap |
+| **Host** | Decides — verify Cap, lineage, `Result{Ops}` |
+| **Peer** | Only applies Ops |
+| **Ops** | Ordered effects as **data** |
+| **lineage / reverse** | Honest cancel and revoke |
+| **Baseline** | Classic Ops that never silent-break |
+| **trace** | Groups steps — **never** permission |
+
+**Flow**
+
 ```text
-┌────────────────────────── cek-framework ──────────────────────────┐
-│  LAW (not code)                                                   │
-│                                                                   │
-│  Cap  = permission ticket                                         │
-│  Intent = the ask under a Cap                                     │
-│  Host = decides (verify Cap, lineage, Result{Ops})                │
-│  Peer = only applies Ops                                          │
-│  Ops  = ordered effects as data                                   │
-│  lineage + reverse = honest cancel / revoke                       │
-│  Baseline = classic Ops that never silent-break                   │
-│  trace = groups steps (never permission)                          │
-│                                                                   │
-│  Flow:  mint → submit → verify → Ops → apply → end → reverse      │
-└───────────────────────────────────────────────────────────────────┘
-         │ meanings & kill criteria              │ build Host/Peer
-         ▼                                       ▼
-   this repo                               cek-runtime
+mint → submit → verify → Ops → apply → end → reverse
 ```
+
+| This repo | Other place |
+|-----------|-------------|
+| Meanings, axioms, kill criteria | **Here** |
+| Build Host/Peer, contract, CI | [cek-runtime](https://github.com/bitplorer/cek-runtime) |
 
 | This repo **is** | This repo **is not** |
 |------------------|----------------------|
@@ -43,18 +47,7 @@
 | What “correct CEK” means | Runnable Host/Peer |
 | Design review checklist | Wire codecs or UI widgets |
 
-| Term | One line |
-|------|----------|
-| **Cap** | Ticket for one class of ask |
-| **Intent** | The ask |
-| **Host** | Authority — decide |
-| **Peer** | Apply surface only |
-| **Ops** | Effect list (data) |
-| **Activity** | Bounded job; end → reverse |
-| **lineage** | Cause trail for undo |
-| **Baseline** | Permanent interop Ops |
-
-Detail: [CONCEPTS.md](CONCEPTS.md) · [CORE/QUICKSTART.md](CORE/QUICKSTART.md)
+More detail: [CONCEPTS.md](CONCEPTS.md) · [CORE/QUICKSTART.md](CORE/QUICKSTART.md)
 
 ---
 
@@ -94,7 +87,7 @@ Official name: **CEK**. **Ops** is the effect list, not the language name.
 | [META/](META/) | How the core is derived |
 | [diagrams/](diagrams/) | Conceptual flows |
 | [PROPOSALS/](PROPOSALS/) | Optional (not frozen) |
-| [GLOSSARY.md](GLOSSARY.md) · [CHARTER.md](CHARTER.md) · [STABILITY.md](STABILITY.md) · [CHOICES.md](CHOICES.md) · [CONTRIBUTING.md](CONTRIBUTING.md) | Terms, freeze, style of change |
+| [GLOSSARY.md](GLOSSARY.md) · [CHARTER.md](CHARTER.md) · [STABILITY.md](STABILITY.md) · [CHOICES.md](CHOICES.md) · [CONTRIBUTING.md](CONTRIBUTING.md) | Terms, freeze, how to change |
 
 **Goals:** Cap-only · Ops-only · fail closed · lineage/reverse · Baseline · frozen names.  
 **Non-goals:** Ship code, wire-as-law, UI catalogs — see [cek-runtime](https://github.com/bitplorer/cek-runtime).
