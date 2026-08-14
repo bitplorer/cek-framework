@@ -4,7 +4,16 @@
 
 The **Cap-Effect Meta-Language (CEK)** core is the locked law of authorized change across boundaries.
 
-It is a **meta-language** in this sense: it defines how programs may *ask*, *be allowed*, *carry out*, *bound*, *remember*, and *undo* change — and how runtimes participate as **Host** or **Peer** under one contract. It is **not** a syntactic superset of Python, TypeScript, Rust, or any other language.
+It is a **meta-language** in this sense: it defines how programs may *ask*, *be allowed*, *carry out*, *bound*, *remember*, and *undo* change — and how runtimes participate as **Host** or **Peer** under one contract.
+
+It is **not**:
+
+- a syntactic superset of Python, TypeScript, Rust, or any other language  
+- a surface programming language people “write programs in”  
+- named after any single kernel noun (especially not **Ops**)
+
+The sole official name of the law is **CEK** (Cap-Effect Meta-Language).  
+**Ops** is the carry-out list (data), not the language name.
 
 ## Core in one line
 
@@ -39,7 +48,8 @@ It is a **meta-language** in this sense: it defines how programs may *ask*, *be 
 
 ## Explicit non-goals of the core
 
-- Choosing specific Cap cryptography
-- Mandating one process topology
-- Defining all domain Ops
-- Replacing general-purpose programming languages
+- Choosing specific Cap cryptography  
+- Mandating one process topology  
+- Defining all domain Ops  
+- Replacing general-purpose programming languages  
+- Implementation languages, crate layout, CI, or isolation technology (those are implementation framework concerns, not law)
