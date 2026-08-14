@@ -8,6 +8,7 @@ To implement Host and Peer kernels, use **[cek-runtime](https://github.com/bitpl
 | Start here | Link |
 |------------|------|
 | 10-minute core | [CORE/QUICKSTART.md](CORE/QUICKSTART.md) |
+| **All concepts (glance)** | [CONCEPTS.md](CONCEPTS.md) |
 | Still CEK? | [KILL-CRITERIA.md](KILL-CRITERIA.md) |
 | Full index | [INDEX.md](INDEX.md) |
 | Build kernels | [cek-runtime](https://github.com/bitplorer/cek-runtime) |
@@ -45,6 +46,8 @@ When the Activity ends (or Cap is revoked), Host reverses lineage.
 Peer may apply inverse/restore Ops; completing a morph does not auto-undo.
 ```
 
+Every term above is expanded with boxes and “is / is not” in **[CONCEPTS.md](CONCEPTS.md)**.
+
 | Term | Meaning |
 |------|---------|
 | **Cap** | Ticket for one class of ask |
@@ -60,7 +63,7 @@ Peer may apply inverse/restore Ops; completing a morph does not auto-undo.
 
 ## How to use this repo
 
-1. Read [CORE/QUICKSTART.md](CORE/QUICKSTART.md).  
+1. Read [CORE/QUICKSTART.md](CORE/QUICKSTART.md) or skim [CONCEPTS.md](CONCEPTS.md).  
 2. Check designs against [KILL-CRITERIA.md](KILL-CRITERIA.md).  
 3. Keep one vocabulary — no second official names for Cap, Ops, Host, Peer.  
 4. Implement via [cek-runtime](https://github.com/bitplorer/cek-runtime) (or a port that honors the same conformance idea).
@@ -82,6 +85,7 @@ Official name: **CEK** (Cap-Effect Meta-Language).
 
 | Path | Role |
 |------|------|
+| [CONCEPTS.md](CONCEPTS.md) | All concepts at a glance |
 | [META/](META/) | How the core is derived and amended |
 | [CORE/](CORE/) | Language law (00–27) |
 | [diagrams/](diagrams/) | Conceptual flows (Mermaid optional) |
@@ -90,7 +94,7 @@ Official name: **CEK** (Cap-Effect Meta-Language).
 
 ## Reading order
 
-1. [QUICKSTART](CORE/QUICKSTART.md) + [KILL-CRITERIA](KILL-CRITERIA.md)  
+1. [QUICKSTART](CORE/QUICKSTART.md) or [CONCEPTS](CONCEPTS.md) + [KILL-CRITERIA](KILL-CRITERIA.md)  
 2. [CORE/SUMMARY.md](CORE/SUMMARY.md)  
 3. Detail as needed · [CHARTER.md](CHARTER.md)
 

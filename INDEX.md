@@ -5,10 +5,11 @@
 | Doc | Role |
 |-----|------|
 | [README.md](README.md) | What CEK is, problems it solves, how to use this repo |
+| [CONCEPTS.md](CONCEPTS.md) | **All concepts at a glance** (boxes, is/is-not) |
 | [CORE/QUICKSTART.md](CORE/QUICKSTART.md) | Irreducible core |
 | [KILL-CRITERIA.md](KILL-CRITERIA.md) | When it is not CEK |
+| [GLOSSARY.md](GLOSSARY.md) | One-line definitions |
 | [COMPLETENESS.md](COMPLETENESS.md) | Coverage audit |
-| [GLOSSARY.md](GLOSSARY.md) | Frozen terms |
 | [STABILITY.md](STABILITY.md) | Stability guarantees |
 | [CHARTER.md](CHARTER.md) | Freeze and amendment |
 | [CHOICES.md](CHOICES.md) | Why key choices were made |
@@ -71,7 +72,7 @@
 
 [diagrams/README.md](diagrams/README.md) — Cap lifecycle, Host pipeline, L1 kernels, reverse sets, law vs implementation.
 
-Implementation diagrams: [cek-runtime/diagrams](https://github.com/bitplorer/cek-runtime/tree/main/diagrams).
+Implementation concepts & topology: [cek-runtime/CONCEPTS](https://github.com/bitplorer/cek-runtime/blob/main/CONCEPTS.md) · [TOPOLOGY](https://github.com/bitplorer/cek-runtime/blob/main/TOPOLOGY.md).
 
 ## Proposals (not frozen)
 

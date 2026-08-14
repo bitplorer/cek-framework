@@ -1,7 +1,8 @@
 # Glossary
 
-Short definitions of frozen concepts. Full law lives in [`CORE/`](CORE/).  
-Navigation: [`INDEX.md`](INDEX.md).
+Short definitions of frozen concepts.  
+**Pictures + “is / is not”:** [`CONCEPTS.md`](CONCEPTS.md)  
+Full law: [`CORE/`](CORE/) · Navigation: [`INDEX.md`](INDEX.md)
 
 | Term | Definition |
 |------|------------|
