@@ -30,6 +30,8 @@ Cap crypto · wire field paths · full domain Op catalogs · performance SLOs ·
 
 Those belong in a separate **implementation framework**, not in META/CORE.
 
+Reference implementation design: [bitplorer/cek-runtime](https://github.com/bitplorer/cek-runtime).
+
 ## Accepted residual risks
 
 Imperfect external undo (mark/compensate) · malicious grantor · L7 bugs under valid Cap · profile author error (Baseline fallback)
