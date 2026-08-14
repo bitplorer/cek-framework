@@ -83,3 +83,4 @@ Kernel designs must remain consistent with:
 | 2026-08-14 | Denoise hubs (README/SUMMARY/COMPLETENESS) | Clarity without capability loss |
 | 2026-08-14 | CONTRIBUTING, corner diagram, polish 09/STABILITY | Post-denoise enhancements |
 | 2026-08-14 | CORE 25–27 | Explicit landed/receipts, idempotency, recovery Cap |
+| 2026-08-14 | CORE 00/06/08 + CHOICES/COMPLETENESS | Framework name clarity; closed L1 set; ordered Host pipeline; Cap lifecycle; cross-Host Caps; implementation boundary |
