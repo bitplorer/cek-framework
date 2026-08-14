@@ -47,6 +47,31 @@ mint → submit → verify → Ops → apply → end → reverse
 | What “correct CEK” means | Runnable Host/Peer |
 | Design review checklist | Wire codecs or UI widgets |
 
+<details>
+<summary>ASCII overview (wide screens)</summary>
+
+```text
+┌────────────────────────── cek-framework ──────────────────────────┐
+│  LAW (not code)                                                   │
+│                                                                   │
+│  Cap  = permission ticket                                         │
+│  Intent = the ask under a Cap                                     │
+│  Host = decides (verify Cap, lineage, Result{Ops})                │
+│  Peer = only applies Ops                                          │
+│  Ops  = ordered effects as data                                   │
+│  lineage + reverse = honest cancel / revoke                       │
+│  Baseline = classic Ops that never silent-break                   │
+│  trace = groups steps (never permission)                          │
+│                                                                   │
+│  Flow:  mint → submit → verify → Ops → apply → end → reverse      │
+└───────────────────────────────────────────────────────────────────┘
+         │ meanings & kill criteria              │ build Host/Peer
+         ▼                                       ▼
+   this repo                               cek-runtime
+```
+
+</details>
+
 More detail: [CONCEPTS.md](CONCEPTS.md) · [CORE/QUICKSTART.md](CORE/QUICKSTART.md)
 
 ---
