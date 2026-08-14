@@ -1,77 +1,80 @@
-# Cap-Effect Meta-Language (CEK)
+# CEK — Cap-Effect Meta-Language
 
-Locked conceptual charter — the **law** of authorized change across boundaries.
+**The rulebook for “who may change a shared world, how the change is listed, and how it is undone.”**
 
-**Start:** [CORE/QUICKSTART.md](CORE/QUICKSTART.md) · **Index:** [INDEX.md](INDEX.md) · **Not CEK:** [KILL-CRITERIA.md](KILL-CRITERIA.md)  
-**To implement:** [cek-runtime](https://github.com/bitplorer/cek-runtime)
-
----
-
-## For developers — what is this?
-
-**CEK is not a library you install and not a language you write apps in.**  
-It is a small rulebook for systems where *permission*, *effects*, and *undo* must stay honest.
-
-| Idea | In practice |
-|------|-------------|
-| **Cap** | Ticket that allows one class of ask |
-| **Intent** | The ask |
-| **Host** | Checks the ticket, decides, records causes |
-| **Ops** | Ordered list of effects (data, not code) |
-| **Peer** | Applies that list — does not invent permission |
-| **lineage / reverse** | What happened under a Cap/Activity, and how to undo |
-| **Baseline** | Classic Ops everyone still understands years later |
-
-**Flow (always the same):**
-
-```text
-Host mints Cap → you submit Intent under Cap
-→ Host verifies (or refuses with no side effects)
-→ Host returns Result with Ops
-→ Peer applies Ops
-→ when work ends, reverse lineage (or mark non-reversible)
-```
-
-### When is CEK useful?
-
-Use this charter when you are building (or reviewing) something that:
-
-- changes a **shared world** (data, devices, multi-agent tools, multiplayer state)  
-- must not rely on ambient “admin” or session magic as permission  
-- needs **revoke / unload / end** with a defined undo story  
-- must **interop** across versions without silent breaks (Baseline)  
-- splits **decide** (server, authority service) from **carry out** (UI, agent, device)
-
-### When you do *not* need this repo alone
-
-- You want runnable Host/Peer code, CI vectors, crate layout → use **[cek-runtime](https://github.com/bitplorer/cek-runtime)**  
-- You only need a normal app with local state and no cross-boundary authority story  
-
-### How developers use *this* repo
-
-1. Read [CORE/QUICKSTART.md](CORE/QUICKSTART.md) (10 minutes).  
-2. Check designs against [KILL-CRITERIA.md](KILL-CRITERIA.md).  
-3. Use frozen words only: Cap, Intent, Ops, Host, Peer, Activity, lineage, Baseline.  
-4. Implement against the law via [cek-runtime](https://github.com/bitplorer/cek-runtime) (or your own port that passes conformance).
-
----
+This repo is **law and vocabulary only** — not an npm/cargo package.  
+To *build* Host/Peer kernels, see **[cek-runtime](https://github.com/bitplorer/cek-runtime)**.
 
 | | |
 |--|--|
-| **Meta** | Fuse explicit parents → partition by intention → lock axioms → name by job → layer strictly → split decide/carry out → require allow/bound/record/reverse → protect Baseline → reject drift → test by canonical speech |
-| **Core** | Mint Cap → submit Intent → apply Ops → bound in Activity → record lineage → reverse on end → group with trace → keep Baseline |
+| **10-minute start** | [CORE/QUICKSTART.md](CORE/QUICKSTART.md) |
+| **“Is this still CEK?”** | [KILL-CRITERIA.md](KILL-CRITERIA.md) |
+| **Full index** | [INDEX.md](INDEX.md) |
+
+---
+
+## Real problems this is for
+
+| Pain you may already have | What goes wrong | What CEK insists on |
+|---------------------------|-----------------|---------------------|
+| Agent or UI “just writes” the DOM / DB / device | No clear permission; hard to audit | Every shared change needs a **Cap** |
+| Effects are hidden in callbacks and side channels | Can’t replay, test, or bound work | Effects leave the boundary only as ordered **Ops** (data) |
+| Session / “trusted peer” / admin flag = power | Ambient authority, confused deputy | **Host** verifies; **Peer** only applies |
+| Feature unload / revoke / “cancel the job” | Partial cleanup, silent “success” | **lineage** + **reverse** (or honest non-reversible mark) |
+| New release breaks old clients | Flag-day interop | **Baseline** Ops always still work |
+| Multi-step flows treated as a login | Correlation mistaken for permission | **trace** groups steps; each step still needs a Cap |
+
+**Concrete examples:** tool-using agents that must not free-mutate production state; collaborative or multiplayer surfaces; DOM morph / UI channel pipelines; device or robot command paths; any service where “who authorized this write?” must be answerable after the fact.
+
+**Not for:** a pure local app with no cross-boundary authority story — you don’t need this charter for that.
+
+---
+
+## What CEK is (in one breath)
+
+A **meta-language**: fixed names and rules for ask → allow → carry out → bound work → remember/undo — not a syntax you program in day to day.
+
+```text
+Host mints a Cap (permission ticket).
+You submit an Intent under that Cap.
+Host checks the Cap — refuse means zero side effects.
+Host returns a Result with Ops (the effect list).
+Peer applies Ops (e.g. dom.morph, kv.set) — it does not grant itself power.
+When the Activity ends (or Cap is revoked), Host reverses lineage.
+Peer may apply inverse/restore Ops; it does not “auto-undo” just because a morph finished.
+```
+
+| Word | Everyday meaning |
+|------|------------------|
+| **Cap** | Ticket for one class of ask |
+| **Intent** | The ask |
+| **Host** | Authority service — decide |
+| **Ops** | Ordered effects as data |
+| **Peer** | Apply surface — UI, agent runtime, device |
+| **Activity** | Bounded job with a lifetime |
+| **lineage** | Cause trail for undo/revoke |
+| **Baseline** | Forever-understandable classic Ops |
+
+---
+
+## What you do with *this* repo
+
+1. Learn the rules ([QUICKSTART](CORE/QUICKSTART.md)).  
+2. Design or review systems so they don’t violate [KILL-CRITERIA](KILL-CRITERIA.md).  
+3. Speak one vocabulary (no second names for Cap/Ops/Host).  
+4. Implement in **[cek-runtime](https://github.com/bitplorer/cek-runtime)** (or a port that passes the same conformance idea).
+
+---
 
 ## Framework name
 
-Official name: **CEK** (Cap-Effect Meta-Language).  
-**Ops** is a kernel noun (ordered carry-out list), not the language name.  
-Rejected as official language names: Ops, stylized aliases (e.g. Ceksy, `c+ek`).
+Official name: **CEK**. **Ops** is one kernel noun (the effect list), not the language name.
 
 ## Goals
 
 | Secure | Flexible | Stable |
 |--------|----------|--------|
-| Cap-only, Ops-only, fail closed, lineage/reverse, Peer unprivileged, Host bootstrap | profile, domain Ops, L6, Activity/part — above the law | Frozen vocabulary, Baseline, dual-speak, conformance |
+| Cap-only, Ops-only, fail closed, lineage/reverse | profile, domain Ops, Activity — above the law | Frozen vocabulary, Baseline, conformance |
 
 ## Map
 
@@ -79,30 +82,16 @@ Rejected as official language names: Ops, stylized aliases (e.g. Ceksy, `c+ek`).
 |------|------|
 | [META/](META/) | How the core is derived and amended |
 | [CORE/](CORE/) | Language law (00–27) |
-| [diagrams/](diagrams/) | Mermaid flows (+ plain tables in READMEs) |
+| [diagrams/](diagrams/) | Flows (Mermaid; READMEs stay readable without it) |
 | [PROPOSALS/](PROPOSALS/) | Optional extensions (**not frozen**) |
-| [STABILITY.md](STABILITY.md) [GLOSSARY.md](GLOSSARY.md) [STYLE.md](STYLE.md) [CHOICES.md](CHOICES.md) [COMPLETENESS.md](COMPLETENESS.md) [CHARTER.md](CHARTER.md) | Guarantees, terms, style, rationale, audit, freeze |
+| [STABILITY.md](STABILITY.md) · [GLOSSARY.md](GLOSSARY.md) · [CHOICES.md](CHOICES.md) · [CHARTER.md](CHARTER.md) | Guarantees, terms, rationale, freeze |
 
 ## Reading order
 
 1. [CORE/QUICKSTART.md](CORE/QUICKSTART.md) + [KILL-CRITERIA.md](KILL-CRITERIA.md)  
-2. [CORE/SUMMARY.md](CORE/SUMMARY.md) · [META/SUMMARY.md](META/SUMMARY.md)  
-3. Depth as needed (hardening 14–27, scenarios, corners)  
-4. [CHARTER.md](CHARTER.md) · optional [PROPOSALS/](PROPOSALS/)  
-
-## Canonical speech
-
-```text
-Host mints a Cap.
-Caller submits an Intent under that Cap.
-Host verifies Cap, records lineage, returns Result with Ops.
-Peer applies Ops.
-Work is an Activity in a Context; parts load under Caps.
-Related Intents share a trace.
-When an Activity ends, reverse its lineage.
-Everyone supports the Baseline; profile only negotiates apply ability.
-```
+2. [CORE/SUMMARY.md](CORE/SUMMARY.md)  
+3. Depth as needed · [CHARTER.md](CHARTER.md)
 
 ## Non-goals
 
-Implementation code · wire paths as law · product UI catalogs · marketing renames of kernel terms · implementation languages / crate layout / CI (see [cek-runtime](https://github.com/bitplorer/cek-runtime))
+Ship code, wire field paths as law, product UI catalogs, or marketing renames — implementation lives in [cek-runtime](https://github.com/bitplorer/cek-runtime).
