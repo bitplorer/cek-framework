@@ -16,6 +16,8 @@
 | [STYLE.md](STYLE.md) | Documentation style |
 | [CONTRIBUTING.md](CONTRIBUTING.md) | How to change the charter |
 | [cek-runtime](https://github.com/bitplorer/cek-runtime) | Implementation framework |
+| Implementations | [cek-runtime](https://github.com/bitplorer/cek-runtime) (Rust reference) · [cek-python](https://github.com/bitplorer/cek-python) (cek-host + cek-surface) |
+| S-tier scorecard | [cek-python/docs/S_TIER_SCORECARD.md](https://github.com/bitplorer/cek-python/blob/main/docs/S_TIER_SCORECARD.md) |
 
 ## Meta-framework (`META/`)
 
