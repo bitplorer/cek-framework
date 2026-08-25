@@ -45,5 +45,5 @@ An implementation, fork, or “CEK-inspired” system **may not claim CEK alignm
 ## Use
 
 - Gate marketing and conformance badges.  
-- Linked from [CHARTER.md](CHARTER.md) and [CORE/QUICKSTART.md](CORE/QUICKSTART.md).  
+- Linked from [CHARTER.md](CHARTER.md), [CORE/QUICKSTART.md](CORE/QUICKSTART.md), and [docs/02-happy-path.md](docs/02-happy-path.md).  
 - Changing these criteria is a charter amendment.

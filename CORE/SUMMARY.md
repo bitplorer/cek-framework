@@ -43,4 +43,4 @@ L4 profile · L5 drivers · L6 policy · L7 app
 
 ## Related
 
-[../META/SUMMARY.md](../META/SUMMARY.md) · [../STABILITY.md](../STABILITY.md) · [../INDEX.md](../INDEX.md)
+[../docs/README.md](../docs/README.md) · [../META/SUMMARY.md](../META/SUMMARY.md) · [../STABILITY.md](../STABILITY.md) · [../INDEX.md](../INDEX.md)

@@ -7,5 +7,6 @@ Method that produces and governs the core.
 | [SUMMARY.md](SUMMARY.md) | Method + doc list |
 | [10-canonical-speech-test.md](10-canonical-speech-test.md) | Alignment test |
 | [../CHARTER.md](../CHARTER.md) | Freeze / amend |
+| [../docs/README.md](../docs/README.md) | Reader path (map, not method) |
 
 Full list: [../INDEX.md](../INDEX.md)
