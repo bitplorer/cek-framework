@@ -37,10 +37,12 @@ The sole official name of the law is **CEK** (Cap-Effect Meta-Language).
 | [01](01-parents.md)–[04](04-vocabulary.md) | Parents, intentions, axioms, vocabulary |
 | [05](05-layers.md)–[13](13-canonical-story.md) | Layers, roles, Cap, lineage, trace, Baseline, change, story |
 | [14](14-security-model.md)–[20](20-errors-and-concurrency.md) | Security, bootstrap, versioning, extensibility, invariants, conformance, errors |
+| [21](21-intent-result-ops.md)–[27](27-recovery-cap.md) | Intent/Result/Ops, sealed args, scenarios, corners, receipts, idempotency, recovery Cap |
 | [SUMMARY](SUMMARY.md) | Denoised core |
 
 ## See also
 
+- Reader path: [`../docs/README.md`](../docs/README.md)
 - Meta-method: [`../META/SUMMARY.md`](../META/SUMMARY.md)
 - Stability: [`../STABILITY.md`](../STABILITY.md)
 - Glossary: [`../GLOSSARY.md`](../GLOSSARY.md)

@@ -5,6 +5,16 @@ Render in any Mermaid-compatible viewer (GitHub, VS Code, mermaid.live).
 
 Conceptual law only. Implementation pipelines and crate layout live in [cek-runtime](https://github.com/bitplorer/cek-runtime).
 
+Reader path (embeds these): [docs/00](../docs/00-mental-model.md) · [docs/01](../docs/01-architecture-and-ownership.md) · [docs/02](../docs/02-happy-path.md).
+
+## Spine (start here)
+
+| File | Content |
+|------|---------|
+| [00-mental-model.mmd](00-mental-model.mmd) | One-screen mental model — Cap, Host, Peer, lineage, reverse, trace, Baseline |
+| [00-ownership.mmd](00-ownership.mmd) | What this repo and each role own / do not own |
+| [00-primary-flow.mmd](00-primary-flow.mmd) | mint → submit → verify → apply → reverse, including fail closed |
+
 ## Meta and structure
 
 | File | Content |
