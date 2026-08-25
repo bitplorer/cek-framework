@@ -1,0 +1,24 @@
+flowchart TB
+  subgraph Owns["cek-framework owns"]
+    Law["axioms A1–A10"]
+    Vocab["frozen vocabulary"]
+    Roles["Host / Peer role law"]
+    Layers["L0–L7 placement"]
+    Kill["kill criteria + conformance families"]
+  end
+  subgraph DoesNot["does not own"]
+    Code["Host / Peer source"]
+    Wire["wire codecs · crypto"]
+    Catalog["domain Op catalogs"]
+    Topo["process topology · CI · crates"]
+  end
+  subgraph Implement["implement without amending law"]
+    RT["cek-runtime — Rust kernels"]
+    PY["cek-python — cek-host + cek-surface"]
+    HW["cek-hw — L5 hw.* apply"]
+  end
+  Owns -->|"forbids treating as law"| DoesNot
+  Implement -->|"must satisfy"| Kill
+  RT -->|"Host decides / Peer applies"| Roles
+  PY -->|"Host decides / Peer applies"| Roles
+  HW -->|"Peer apply only"| Roles

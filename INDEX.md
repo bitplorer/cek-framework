@@ -1,5 +1,16 @@
 # Index
 
+## Reader path
+
+Read [docs/README.md](docs/README.md) first if you are new.
+
+| Doc | Role |
+|-----|------|
+| [docs/00-mental-model.md](docs/00-mental-model.md) | Core thesis, one-screen model, axioms |
+| [docs/01-architecture-and-ownership.md](docs/01-architecture-and-ownership.md) | Ownership table with negative space, layers, L1 kernels |
+| [docs/02-happy-path.md](docs/02-happy-path.md) | Canonical story, authority refusal, reverse failure |
+| [docs/03-current-reality.md](docs/03-current-reality.md) | Intended vs actual; implementations; unfrozen proposals |
+
 ## Start here
 
 | Doc | Role |
@@ -15,8 +26,7 @@
 | [CHOICES.md](CHOICES.md) | Why key choices were made |
 | [STYLE.md](STYLE.md) | Documentation style |
 | [CONTRIBUTING.md](CONTRIBUTING.md) | How to change the charter |
-| [cek-runtime](https://github.com/bitplorer/cek-runtime) | Implementation framework |
-| Implementations | [cek-runtime](https://github.com/bitplorer/cek-runtime) (Rust reference) · [cek-python](https://github.com/bitplorer/cek-python) (cek-host + cek-surface) |
+| Implementations | [cek-runtime](https://github.com/bitplorer/cek-runtime) (Rust reference) · [cek-python](https://github.com/bitplorer/cek-python) (cek-host + cek-surface) · [cek-hw](https://github.com/bitplorer/cek-hw) (L5 `hw.*` apply, not a Host) |
 | S-tier scorecard | [cek-python/docs/S_TIER_SCORECARD.md](https://github.com/bitplorer/cek-python/blob/main/docs/S_TIER_SCORECARD.md) |
 
 ## Meta-framework (`META/`)
@@ -72,7 +82,7 @@
 
 ## Diagrams
 
-[diagrams/README.md](diagrams/README.md) — Cap lifecycle, Host pipeline, L1 kernels, reverse sets, law vs implementation.
+[diagrams/README.md](diagrams/README.md) — mental model, ownership, primary flow; Cap lifecycle, Host pipeline, L1 kernels, reverse sets, law vs implementation.
 
 Implementation concepts & topology: [cek-runtime/CONCEPTS](https://github.com/bitplorer/cek-runtime/blob/main/CONCEPTS.md) · [TOPOLOGY](https://github.com/bitplorer/cek-runtime/blob/main/TOPOLOGY.md).
 
@@ -82,3 +92,5 @@ Implementation concepts & topology: [cek-runtime/CONCEPTS](https://github.com/bi
 |-----|--------|
 | [PROPOSALS/README.md](PROPOSALS/README.md) | Rules for drafts |
 | [radical-minimal-downside.md](PROPOSALS/radical-minimal-downside.md) | Optional high-ROI extensions |
+
+CORE 25–27 already freeze the conceptual rules for receipts, idempotency bind, and recovery Cap (optional for Baseline). Remaining unfrozen items: P2, P3, P5–P8. See [docs/03-current-reality.md](docs/03-current-reality.md).

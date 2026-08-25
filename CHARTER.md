@@ -11,7 +11,8 @@ The following are **locked** as of this repository:
 5. **Layer model** — `CORE/05-layers.md`  
 6. **Stability guarantees** — `STABILITY.md`  
 
-`PROPOSALS/` is **not** frozen until explicitly adopted.
+`PROPOSALS/` is **not** frozen until explicitly adopted.  
+`docs/` is the **reader path** (map). It is not a second law. CORE wins on divergence.
 
 ## What may change without charter amendment
 
@@ -21,6 +22,7 @@ The following are **locked** as of this repository:
 - Additive optional meta that Peers may ignore  
 - Conformance vector *additions* that clarify existing law  
 - Draft text under `PROPOSALS/`  
+- Editorial clarity in hubs and `docs/` that does not change meaning  
 
 ## What requires charter amendment
 
@@ -84,3 +86,4 @@ Kernel designs must remain consistent with:
 | 2026-08-14 | CONTRIBUTING, corner diagram, polish 09/STABILITY | Post-denoise enhancements |
 | 2026-08-14 | CORE 25–27 | Explicit landed/receipts, idempotency, recovery Cap |
 | 2026-08-14 | CORE 00/06/08 + CHOICES/COMPLETENESS | Framework name clarity; closed L1 set; ordered Host pipeline; Cap lifecycle; cross-Host Caps; implementation boundary |
+| 2026-08-25 | Reader path `docs/00–03` + hub reorientation | Editorial. No axiom, vocabulary, or layer change. Progressive disclosure; ownership table; reality map. CORE remains authority. |

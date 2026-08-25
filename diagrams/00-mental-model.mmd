@@ -1,0 +1,32 @@
+flowchart TB
+  subgraph Allow["Allow"]
+    Cap["Cap — sole authority"]
+  end
+  subgraph Ask["Ask"]
+    Intent["Intent under Cap"]
+  end
+  subgraph HostDecide["Host decides"]
+    verify["verify · once · dispatch"]
+    lineage["lineage + reverse plan"]
+    Result["Result"]
+  end
+  subgraph PeerApply["Peer carries out"]
+    Ops["ordered Ops as data"]
+    apply["apply under profile"]
+  end
+  subgraph Bound["Bound work"]
+    Activity["Activity in Context"]
+  end
+  Cap --> Intent
+  Intent --> verify
+  verify -->|refuse| closed["fail closed — zero mutate Ops"]
+  verify -->|ok| lineage
+  lineage --> Result
+  Result --> Ops
+  Ops --> apply
+  Activity --> Intent
+  Activity -->|"end / revoke"| reverse["reverse lineage"]
+  apply --> reverse
+  trace["trace"] -.->|"groups only — never permission"| Intent
+  Baseline["Baseline"] -.->|"permanent interop"| Result
+  Baseline -.-> apply

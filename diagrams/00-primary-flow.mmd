@@ -1,0 +1,22 @@
+sequenceDiagram
+  participant Host
+  participant Caller
+  participant Peer
+
+  Host->>Host: bootstrap mint Cap (Host-only)
+  Caller->>Host: submit Intent under Cap
+  Host->>Host: verify Cap (action, sealed args, window)
+  alt verify fails or required once-store down
+    Host-->>Caller: Result authority_refusal — zero mutate Ops
+  else verify ok
+    Host->>Host: consume once / idempotency bind
+    Host->>Host: dispatch
+    Host->>Host: record lineage if revocable or endable
+    Host->>Host: project Ops to profile union Baseline
+    Host-->>Caller: Result with ordered Ops
+    Caller->>Peer: deliver Ops
+    Peer->>Peer: apply Ops in order
+    opt Activity end or Cap revoke
+      Host->>Host: reverse lineage (inverse / recovery Cap / mark)
+    end
+  end

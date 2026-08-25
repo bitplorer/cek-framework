@@ -1,6 +1,8 @@
 # CEK Quickstart — irreducible core only
 
-Read this first. Everything else elaborates.
+Read this first among CORE files. Reader path: [`../docs/00-mental-model.md`](../docs/00-mental-model.md).
+
+Everything else elaborates.
 
 ---
 
@@ -87,6 +89,7 @@ Full list: [`../KILL-CRITERIA.md`](../KILL-CRITERIA.md)
 
 | Depth | Doc |
 |-------|-----|
+| Happy path + refusal | [`../docs/02-happy-path.md`](../docs/02-happy-path.md) |
 | Law | [SUMMARY.md](SUMMARY.md) |
 | Corners | [24-moving-parts-and-corners.md](24-moving-parts-and-corners.md) |
 | Security | [14-security-model.md](14-security-model.md) |

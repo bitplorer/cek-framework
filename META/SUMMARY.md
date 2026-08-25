@@ -17,4 +17,5 @@
 
 [00](00-purpose.md) purpose · [01](01-parent-fusion.md) fusion · [02](02-intention-partition.md) intentions · [03](03-axiom-lock.md) axioms · [04](04-naming-law.md) naming · [05](05-layer-law.md) layers · [06](06-role-split.md) roles · [07](07-accountability-loop.md) accountability · [08](08-permanence-and-change.md) permanence · [09](09-rejection-discipline.md) rejects · [10](10-canonical-speech-test.md) speech test  
 
-**Product of this method:** [../CORE/](../CORE/)
+**Product of this method:** [../CORE/](../CORE/)  
+**Reader path (map):** [../docs/README.md](../docs/README.md)
