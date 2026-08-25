@@ -81,7 +81,7 @@ Reader-facing compression (each line is absolute):
 | 4 | **Lineage then reverse** | Revocable Cap or endable Activity records cause and reverses — or marks non-reversible. (A3) |
 | 5 | **Fail closed** | Bad Cap, missing required once-store, or required lineage write failure refuses. Zero mutate Ops. (A5) |
 | 6 | **trace is not permission** | A trace groups Intents. It never grants, executes, or undoes. (A6) |
-| 7 | **Baseline never silent-breaks** | New power is additive or versioned. Primary names do not fork. (A4, A10) |
+| 7 | **Baseline never silent-breaks** | New power is additive or versioned. (A4) |
 
 Remaining constitutional axioms, still in force:
 

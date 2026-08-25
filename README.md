@@ -55,7 +55,7 @@ Constitutional text: [CORE/03-axioms.md](CORE/03-axioms.md). Compression:
 4. **Lineage then reverse** — Revocable/endable paths record cause and undo, or mark non-reversible. (A3)
 5. **Fail closed** — Bad Cap or required store down refuses. Zero mutate Ops. (A5)
 6. **trace is not permission** — Correlation never grants, executes, or undoes. (A6)
-7. **Baseline never silent-breaks** — New power is additive or versioned. Names do not fork. (A4, A10)
+7. **Baseline never silent-breaks** — New power is additive or versioned. (A4)
 
 A8–A10 still bind: `limit`/`isolate` only narrow; composition is Cap-gated; one concept, one name.
 
@@ -126,7 +126,7 @@ mint → submit → verify → Ops → apply → end → reverse
 │  trace = groups steps (never permission)                          │
 │                                                                   │
 │  Flow:  mint → submit → verify → Ops → apply → end → reverse      │
-└─────────────────────────────────────────────────────────────────┘
+└───────────────────────────────────────────────────────────────────┘
          │ meanings & kill criteria              │ build Host/Peer
          ▼                                       ▼
    this repo                               cek-runtime / cek-python

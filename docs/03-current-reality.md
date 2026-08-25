@@ -48,6 +48,8 @@ INDEX already named [cek-runtime](https://github.com/bitplorer/cek-runtime) and 
 | [cek-hw](https://github.com/bitplorer/cek-hw) | L5 `hw.*` driver, serial, MCU port. Not a Host. | **No — created 2026-08-25** |
 | [ux-app](https://github.com/bitplorer/ux-app) | L7 application on ux-dom + ux-channel | No (out of charter scope; listed here as L7 existence) |
 
+L7 product/UI family (`ux-dom`, `ux-channel`, `ux-compose`, `ux-app`, …) exists outside this charter. Those repos are not kernels and do not amend law.
+
 This is not a law gap. It is a **map** gap, closed by this page and the hub updates.
 
 ### Dual path: CORE 25–27 vs PROPOSALS P1/P4

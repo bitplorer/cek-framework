@@ -35,6 +35,8 @@ sequenceDiagram
 
 Source: [`diagrams/00-primary-flow.mmd`](../diagrams/00-primary-flow.mmd). Same path in law: [`CORE/13-canonical-story.md`](../CORE/13-canonical-story.md), [`CORE/06-host-peer.md`](../CORE/06-host-peer.md), [`CORE/23-scenarios.md`](../CORE/23-scenarios.md) S1.
 
+Delivery of Result/Ops is not a kernel role. Caller is shown as courier; an in-process Host→Peer is equally legal ([CORE/06](../CORE/06-host-peer.md)).
+
 Text form:
 
 ```text

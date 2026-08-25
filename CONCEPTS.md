@@ -74,7 +74,7 @@ Sealed args cannot be altered by the caller past Cap bind. Open args may fill on
 │ mint · verify · once/idem    │
 │ dispatch · lineage · project │
 │ reverse · Result             │
-└─────────────────────────────┘
+└──────────────────────────────┘
 ```
 
 | Does | Does not |
@@ -95,7 +95,7 @@ Sealed args cannot be altered by the caller past Cap bind. Open args may fill on
 │ profile · apply Ops in order │
 │ optional receipt             │
 │ NO mint · NO Cap authority   │
-└─────────────────────────────┘
+└──────────────────────────────┘
 ```
 
 | Does | Does not |
