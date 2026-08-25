@@ -1,5 +1,7 @@
 # Concepts at a glance
 
+Read [docs/00-mental-model.md](docs/00-mental-model.md) first if you are new.
+
 Concise pictures of every frozen CEK idea. Full law: [`CORE/`](CORE/). Short defs: [`GLOSSARY.md`](GLOSSARY.md).
 
 **How to read each block:** what it is → where it sits → what it is *not*.
@@ -14,6 +16,8 @@ mint Cap → submit Intent → Host verify → Result{Ops} → Peer apply
          → end/revoke → reverse (or mark non-reversible)
          → trace only groups steps → Baseline always still works
 ```
+
+Diagram: [`diagrams/00-mental-model.mmd`](diagrams/00-mental-model.mmd).
 
 ---
 
@@ -70,7 +74,7 @@ Sealed args cannot be altered by the caller past Cap bind. Open args may fill on
 │ mint · verify · once/idem    │
 │ dispatch · lineage · project │
 │ reverse · Result             │
-└──────────────────────────────┘
+└─────────────────────────────┘
 ```
 
 | Does | Does not |
@@ -91,7 +95,7 @@ Sealed args cannot be altered by the caller past Cap bind. Open args may fill on
 │ profile · apply Ops in order │
 │ optional receipt             │
 │ NO mint · NO Cap authority   │
-└──────────────────────────────┘
+└─────────────────────────────┘
 ```
 
 | Does | Does not |
@@ -291,7 +295,7 @@ One concept, one name — no synonym fork.
 | Undo impossible | Mark non-reversible; don’t fake success |
 | Multi-step group | trace (still Cap each step) |
 
-→ [KILL-CRITERIA.md](KILL-CRITERIA.md) · [CORE/QUICKSTART.md](CORE/QUICKSTART.md)
+→ [KILL-CRITERIA.md](KILL-CRITERIA.md) · [CORE/QUICKSTART.md](CORE/QUICKSTART.md) · [docs/02-happy-path.md](docs/02-happy-path.md)
 
 ---
 
@@ -299,3 +303,6 @@ One concept, one name — no synonym fork.
 
 How Host/Peer processes, contract, and wire fit together:  
 **[cek-runtime CONCEPTS](https://github.com/bitplorer/cek-runtime/blob/main/CONCEPTS.md)** · **[TOPOLOGY](https://github.com/bitplorer/cek-runtime/blob/main/TOPOLOGY.md)**
+
+Python Host + surface: **[cek-python](https://github.com/bitplorer/cek-python)**.  
+L5 hardware apply (not a Host): **[cek-hw](https://github.com/bitplorer/cek-hw)**.
