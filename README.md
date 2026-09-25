@@ -171,6 +171,7 @@ Official name: **CEK**. **Ops** is the effect list, not the language name.
 | Path | Role |
 |------|------|
 | [docs/](docs/) | Reader path — mental model, ownership, happy path, current reality |
+| [docs/PLACE.md](docs/PLACE.md) | This law among the libraries that implement it |
 | [CONCEPTS.md](CONCEPTS.md) | All concepts at a glance |
 | [CORE/](CORE/) | Language law (00–27) |
 | [META/](META/) | How the core is derived |
